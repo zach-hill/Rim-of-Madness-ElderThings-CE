@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>*/AlienRace.ThingDef_AlienRace[defName="Alien_ElderThing_Race_Standard"]</xpath>
+    <value>
+      <li Class="CombatExtended.RacePropertiesExtensionCE">
+        <bodyShape>Humanoid</bodyShape>
+      </li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>*/AlienRace.ThingDef_AlienRace[defName="Alien_ElderThing_Race_Standard"]/statBases</xpath>
+    <value>
+      <MeleeDodgeChance>0.19</MeleeDodgeChance>
+      <MeleeCritChance>0.21</MeleeCritChance>
+      <MeleeParryChance>0.09</MeleeParryChance>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>*/AlienRace.ThingDef_AlienRace[defName="Alien_ElderThing_Race_Standard"]/tools</xpath>
+    <value>
+      <tools>
+        <li Class="CombatExtended.ToolCE">
+	        <label>arms</label>
+	        <capacities>
+	          <li>Blunt</li>
+          </capacities>
+          <power>7</power>
+          <cooldownTime>1.4</cooldownTime>
+          <linkedBodyPartsGroup>ElderThing_Arms</linkedBodyPartsGroup>
+          <armorPenetration>0.178</armorPenetration>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>overwhelming mind</label>
+          <capacities>
+            <li>ElderThing_Psychic</li>
+          </capacities>
+          <power>3</power>
+          <cooldownTime>0.4</cooldownTime>
+          <linkedBodyPartsGroup>ElderThing_Mind</linkedBodyPartsGroup>
+          <armorPenetration>0.45</armorPenetration>
+        </li>
+      </tools>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>*/AlienRace.ThingDef_AlienRace[defName="Alien_ElderThing_Race_Standard"]</xpath>
+    <value>
+      <comps />
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>*/AlienRace.ThingDef_AlienRace[defName="Alien_ElderThing_Race_Standard"]/comps</xpath>
+    <value>
+      <li>
+        <compClass>CombatExtended.CompPawnGizmo</compClass>
+      </li>
+      <li Class="CombatExtended.CompProperties_Suppressable" />
+    </value>
+  </Operation>
+</Patch>
